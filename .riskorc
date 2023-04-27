@@ -56,7 +56,7 @@ you've forgotten:
       Opens RC files in code. No arg for .riskorc, 'b' for .bashrc, 'ba' for
       .bash_aliases or 'z' for .zshrc.
   * The printcomposeextra and printinputextra functions which just print stuff
-    to place into ~/.Xcompose and ~/.inputrc.
+    to place into ~/.XCompose and ~/.inputrc.
 EOM
 }
 
