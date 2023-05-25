@@ -18,6 +18,7 @@ alias la='ls -A'
 alias where='whereis'
 alias clip='xclip -selection clipboard'
 alias ffmpeg='ffmpeg -hide_banner'
+alias base64='base64 --wrap=0'
 
 alias epath='echo $PATH'
 alias pyserver='py -m http.server'
@@ -60,6 +61,7 @@ you've forgotten:
       .bash_aliases or 'z' for .zshrc.
   * The printcomposeextra and printinputextra functions which just print stuff
     to place into ~/.XCompose and ~/.inputrc.
+  * Other convenience aliases to run various commands with friendlier default options
 EOM
 }
 
