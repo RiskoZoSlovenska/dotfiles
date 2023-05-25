@@ -16,7 +16,8 @@ command -v most > /dev/null && export PAGER='most' # Set `most` as the PAGER if 
 # Aliases
 alias la='ls -A'
 alias where='whereis'
-alias clip='xclip -selection clipboard'
+alias rawclip='xclip -selection clipboard'
+alias clip='tee /dev/tty | rawclip'
 alias ffmpeg='ffmpeg -hide_banner'
 alias base64='base64 --wrap=0'
 
@@ -49,7 +50,8 @@ Hi future me, here's a list of things your custom configuration adds, in case
 you've forgotten:
   * epath alias to echo the current \$PATH
   * pyserver alias to start http server
-  * clip alias to use to pipe to your clipboard
+  * clip and rawclip aliases to pipe stdout to your clipboard (requires xclip)
+      (rawclip just pipes, clip copies and pipes)
   * luarocks aliases (lur, luri, etc.)
   * luaver aliases (lcur, luse51, etc.)
   * The riskohelp function, which... well, which you just used.
@@ -61,7 +63,7 @@ you've forgotten:
       .bash_aliases or 'z' for .zshrc.
   * The printcomposeextra and printinputextra functions which just print stuff
     to place into ~/.XCompose and ~/.inputrc.
-  * Other convenience aliases to run various commands with friendlier default options
+  * Other aliases to run various commands with friendlier default options
 EOM
 }
 
