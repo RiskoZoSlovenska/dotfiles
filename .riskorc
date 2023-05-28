@@ -23,6 +23,7 @@ alias base64='base64 --wrap=0'
 
 alias epath='echo $PATH'
 alias pyserver='py -m http.server'
+alias ping8='ping 8.8.8.8'
 
 alias python='python3'
 alias py='python'
@@ -50,6 +51,7 @@ Hi future me, here's a list of things your custom configuration adds, in case
 you've forgotten:
   * epath alias to echo the current \$PATH
   * pyserver alias to start http server
+  * ping8 alias to ping 8.8.8.8
   * clip and rawclip aliases to pipe stdout to your clipboard (requires xclip)
       (rawclip just pipes, clip copies and pipes)
   * luarocks aliases (lur, luri, etc.)
