@@ -10,12 +10,12 @@ export PATH="$PATH":'/home/riskozoslovenska/.local/sbin'
 
 
 # Other variables
-command -v most > /dev/null && export PAGER='most' # Set `most` as the PAGER if it is installed
+command -v most >/dev/null && export PAGER='most' # Set `most` as the PAGER if it is installed
 
 
 # Aliases
 alias la='ls -A'
-alias where='whereis'
+alias where='command -V'
 alias rawclip='xclip -selection clipboard'
 alias clip='tee /dev/tty | rawclip'
 alias ffmpeg='ffmpeg -hide_banner'
