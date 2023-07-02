@@ -5,8 +5,8 @@
 shell="$(basename -- "$SHELL")"
 
 # PATH additions
-export PATH="$PATH":'/home/riskozoslovenska/.local/bin'
-export PATH="$PATH":'/home/riskozoslovenska/.local/sbin'
+export PATH="$PATH:/home/riskozoslovenska/.local/bin"
+export PATH="$PATH:/home/riskozoslovenska/.local/sbin"
 
 
 # Other variables
@@ -18,12 +18,12 @@ alias la='ls -A'
 alias where='command -V'
 alias rawclip='xclip -selection clipboard'
 alias clip='tee /dev/tty | rawclip'
-alias ffmpeg='ffmpeg -hide_banner'
-alias base64='base64 --wrap=0'
-
 alias epath='echo $PATH'
 alias pyserver='py -m http.server'
 alias ping8='ping 8.8.8.8'
+
+alias ffmpeg='ffmpeg -hide_banner'
+alias base64='base64 --wrap=0'
 
 alias python='python3'
 alias py='python'
