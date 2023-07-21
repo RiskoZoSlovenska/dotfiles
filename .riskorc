@@ -4,6 +4,11 @@
 
 shell="$(basename -- "$SHELL")"
 
+
+# Running commands
+stty -ixon # https://superuser.com/a/473051
+
+
 # PATH additions
 export PATH="$PATH:/home/riskozoslovenska/.local/bin"
 export PATH="$PATH:/home/riskozoslovenska/.local/sbin"
