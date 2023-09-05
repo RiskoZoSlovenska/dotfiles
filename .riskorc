@@ -10,12 +10,16 @@ stty -ixon # https://superuser.com/a/473051
 
 
 # PATH additions
-export PATH="$PATH:/home/riskozoslovenska/.local/bin"
-export PATH="$PATH:/home/riskozoslovenska/.local/sbin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/sbin"
 
 
-# Other variables
-command -v most >/dev/null && export PAGER='most' # Set `most` as the PAGER if it is installed
+# Pager
+if pager="$(command -v most)"; then
+	export PAGER="$pager"
+	export SYSTEMD_PAGER="$pager"
+	export SYSTEMD_PAGERSECURE=true
+fi
 
 
 # Aliases
@@ -101,7 +105,7 @@ addtopath() {
 	esac
 
 	echo "Appending to $pathsfile and exec'ing $SHELL..."
-	echo "export PATH=\"\$PATH\":'$1'" >> "$pathsfile"
+	echo "export PATH=\"\$PATH:$1\"" >> "$pathsfile"
 	exec $SHELL
 }
 
