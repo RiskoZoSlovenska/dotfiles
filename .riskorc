@@ -20,12 +20,19 @@ command -v most >/dev/null && export PAGER='most' # Set `most` as the PAGER if i
 
 # Aliases
 alias la='ls -A'
+alias ll='ls -lh'
+alias lla='ll -A'
 alias where='command -V'
 alias rawclip='xclip -selection clipboard'
 alias clip='tee /dev/tty | rawclip'
 alias epath='echo $PATH'
+alias refresh='exec $SHELL'
+alias grep='grep --color=auto'
+alias cgrep='grep --color=always'
 alias pyserver='py -m http.server'
 alias ping8='ping 8.8.8.8'
+alias ping1='ping 1.1.1.1'
+alias pingg='ping google.com'
 
 alias ffmpeg='ffmpeg -hide_banner'
 alias base64='base64 --wrap=0'
@@ -54,11 +61,14 @@ riskohelp () {
 	cat << EOM
 Hi future me, here's a list of things your custom configuration adds, in case
 you've forgotten:
+  * la, ll and lla aliases
   * epath alias to echo the current \$PATH
   * pyserver alias to start http server
-  * ping8 alias to ping 8.8.8.8
+  * ping8, ping1 and pingg aliases to ping 8.8.8.8, 1.1.1.1 and google.com
   * clip and rawclip aliases to pipe stdout to your clipboard (requires xclip)
       (rawclip just pipes, clip copies and pipes)
+  * cgrep alias to grep with forced color
+  * refresh alias to exec the current shell
   * luarocks aliases (lur, luri, etc.)
   * luaver aliases (lcur, luse51, etc.)
   * The riskohelp function, which... well, which you just used.
