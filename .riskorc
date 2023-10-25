@@ -43,7 +43,9 @@ alias base64='base64 --wrap=0'
 
 alias python='python3'
 alias py='python'
+alias pypy='pypy3'
 alias pip='pip3'
+alias ppip='pypy -m pip'
 
 alias lur='luarocks'
 alias luri='lur install'
