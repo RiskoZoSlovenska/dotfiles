@@ -10,7 +10,7 @@ fi
 
 
 create_symlink() {
-	mkdir -p "$(dirname -- "$2")"
+	mkdir -p "$(dirname -- "$1")"
 	if ln -f -s "$2" "$1"; then
 		echo "Created symlink $1 <- $2"
 	else
