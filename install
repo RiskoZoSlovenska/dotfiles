@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# https://stackoverflow.com/a/4774063
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1; pwd -P )"
+echo "Detected script root as $SCRIPTPATH"
+if ! [ -e "$SCRIPTPATH" ]; then
+	echo >&2 "Something doesn't look right."
+	exit 1
+fi
+
+
+create_symlink() {
+	mkdir -p "$(dirname -- "$2")"
+	if ln -f -s "$2" "$1"; then
+		echo "Created symlink $1 <- $2"
+	else
+		echo >&2 "Creating symlink $1 <- $2 failed!"
+	fi
+}
+
+read_bool() {
+	while true; do
+		read -r -p "$1 [y/n]: " input
+		if [ "$input" = "y" ] || [ "$input" = "Y" ]; then
+			answer=true
+			return
+		elif [ "$input" = "n" ] || [ "$input" = "N" ]; then
+			answer=false
+			return
+		fi
+	done
+}
+
+check_install() {
+	sys_path="$1"
+	real_path="$SCRIPTPATH/$2"
+
+	if ! [ -e "$real_path" ]; then
+		echo >&2 "Cannot find $real_path"
+		exit 1
+	fi
+
+	if ! [ -e "$sys_path" ]; then
+		read_bool "$sys_path doesn't exist; symlink it?"
+		if $answer; then
+			create_symlink "$sys_path" "$real_path"
+		fi
+	elif ! [ "$sys_path" -ef "$real_path" ]; then
+		read_bool "$sys_path exists but is unexpected; delete and re-symlink it?"
+		if $answer; then
+			rm "$sys_path"
+			create_symlink "$sys_path" "$real_path"
+		fi
+	else
+		echo "$sys_path looks OK"
+	fi
+}
+
+
+check_install "$HOME/.riskorc" "riskorc"
+check_install "$HOME/.config/micro/settings.json" "micro/settings.json"
+check_install "$HOME/.config/micro/bindings.json" "micro/bindings.json"
+check_install "$HOME/.config/micro/colorschemes/risko.micro" "micro/colorschemes/risko.micro"
+check_install "$HOME/.oh-my-zsh/themes/headline.zsh-theme" "oh-my-zsh/themes/headline.zsh-theme"
+
+echo "All done."

@@ -1,0 +1,16 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Alt-`": "CommandMode",
+    "Alt-d": "command:definition",
+    "Alt-f": "command:format",
+    "Alt-k": "command:hover",
+    "Alt-r": "command:references",
+    "AltDelete": "DeleteWordRight",
+    "Ctrl-Carat": "CommandMode",
+    "Ctrl-P": "CommandMode",
+    "Ctrl-b": "FindPrevious",
+    "Ctrl-r": "ShellMode",
+    "CtrlSpace": "command:lspcompletion",
+    "CtrlUnderscore": "lua:comment.comment",
+    "F5": "lua:wc.wordCount"
+}

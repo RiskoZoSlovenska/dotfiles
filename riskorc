@@ -9,6 +9,10 @@ shell="$(basename -- "$SHELL")"
 stty -ixon # https://superuser.com/a/473051
 
 
+# Environment variables
+export MICRO_TRUECOLOR=1
+
+
 # PATH additions
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.local/sbin"
@@ -63,7 +67,7 @@ alias luse54='luaver use 5.4.4'
 
 
 # Functions
-riskohelp () {
+riskohelp() {
 	cat << EOM
 Hi future me, here's a list of things your custom configuration adds, in case
 you've forgotten:
