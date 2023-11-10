@@ -10,6 +10,7 @@ stty -ixon # https://superuser.com/a/473051
 
 
 # Environment variables
+export COLORTERM=truecolor
 export MICRO_TRUECOLOR=1
 
 
