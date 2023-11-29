@@ -61,6 +61,6 @@ check_install "$HOME/.riskorc" "riskorc"
 check_install "$HOME/.config/micro/settings.json" "micro/settings.json"
 check_install "$HOME/.config/micro/bindings.json" "micro/bindings.json"
 check_install "$HOME/.config/micro/colorschemes/risko.micro" "micro/colorschemes/risko.micro"
-check_install "$HOME/.oh-my-zsh/themes/headline.zsh-theme" "oh-my-zsh/themes/headline.zsh-theme"
+check_install "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/headline.zsh-theme" "oh-my-zsh/themes/headline.zsh-theme"
 
 echo "All done."
