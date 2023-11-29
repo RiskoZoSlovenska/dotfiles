@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # https://stackoverflow.com/a/4774063
-SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
-echo "Detected script root as $SCRIPTPATH"
-if ! [ -e "$SCRIPTPATH" ]; then
+c_SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+echo "Detected script root as $c_SCRIPTPATH"
+if ! [ -e "$c_SCRIPTPATH" ]; then
 	echo >&2 "Something doesn't look right."
 	exit 1
 fi
+
+c_ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
 
 create_symlink() {
@@ -33,7 +35,7 @@ read_bool() {
 
 check_install() {
 	sys_path="$1"
-	real_path="$SCRIPTPATH/$2"
+	real_path="$c_SCRIPTPATH/$2"
 
 	if ! [ -e "$real_path" ]; then
 		echo >&2 "Cannot find $real_path"
@@ -61,6 +63,6 @@ check_install "$HOME/.riskorc" "riskorc"
 check_install "$HOME/.config/micro/settings.json" "micro/settings.json"
 check_install "$HOME/.config/micro/bindings.json" "micro/bindings.json"
 check_install "$HOME/.config/micro/colorschemes/risko.micro" "micro/colorschemes/risko.micro"
-check_install "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/headline.zsh-theme" "oh-my-zsh/themes/headline.zsh-theme"
+check_install "$c_ZSH_CUSTOM/themes/headline.zsh-theme" "oh-my-zsh/themes/headline.zsh-theme"
 
 echo "All done."
