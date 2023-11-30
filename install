@@ -60,6 +60,7 @@ check_install() {
 
 
 check_install "$HOME/.riskorc" "riskorc"
+check_install "$HOME/.XCompose" "XCompose"
 check_install "$HOME/.config/micro/settings.json" "micro/settings.json"
 check_install "$HOME/.config/micro/bindings.json" "micro/bindings.json"
 check_install "$HOME/.config/micro/colorschemes/risko.micro" "micro/colorschemes/risko.micro"
