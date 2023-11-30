@@ -37,6 +37,9 @@ fi
 # https://github.com/marlonrichert/zsh-autocomplete#reset-history-key-bindings-to-zsh-default
 # shellcheck disable=all
 if [ -n "$ZSH_VERSION" ]; then
+	# Sane Ctrl + Backspace
+	bindkey '^H' backward-kill-word
+
 	# Change zsh-autocomplete Tab behaviour to cycle options
 	bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 	bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
