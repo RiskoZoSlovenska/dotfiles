@@ -119,8 +119,8 @@ you've forgotten:
   * The erc function
       Opens RC files in code. No arg for .riskorc, 'b' for .bashrc, 'ba' for
       .bash_aliases or 'z' for .zshrc.
-  * The printcomposeextra and printinputextra functions which just print stuff
-    to place into ~/.XCompose and ~/.inputrc.
+  * The printcomposeextra function which just prints stuff to place into
+      ~/.XCompose
   * Other aliases to run various commands with friendlier default options
 EOM
 }
@@ -241,17 +241,5 @@ printcomposeextra() {
 <Multi_key> <g> <q> <x> : "ξ"    U03BE    # GREEK SMALL LETTER XI
 
 <Multi_key> <z> <space> : "​"    U200B    # ZWSP
-EOM
-}
-
-printinputextra() {
-	cat << EOM
-# Make sure to include \`\$include /etc/inputrc\` if not already there
-
-# Case-insensitive tab completion (this one should be built-in for most things)
-set completion-ignore-case on
-
-# Taken from https://unix.stackexchange.com/a/264871
-"\C-h": backward-kill-word
 EOM
 }
