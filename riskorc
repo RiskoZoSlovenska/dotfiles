@@ -140,7 +140,7 @@ addtopath() {
 	esac
 
 	echo "Appending to $pathsfile and exec'ing $SHELL..."
-	echo "export PATH=\"\$PATH:$1\"" >> "$pathsfile"
+	echo "PATH=\"\$PATH:$1\"" >> "$pathsfile"
 	exec $SHELL
 }
 
