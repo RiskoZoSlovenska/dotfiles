@@ -26,6 +26,11 @@ if pager="$(command -v most)"; then
 	export SYSTEMD_PAGERSECURE=true
 fi
 
+# Editor
+if micro="$(command -v micro)"; then
+	export EDITOR="$micro"
+fi
+
 
 # ZSH plugin settings
 if command -v zstyle > /dev/null; then
