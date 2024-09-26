@@ -15,6 +15,13 @@ PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.local/sbin"
 
 
+# ZSH shell options
+setopt correct
+unsetopt correct_all
+
+setopt extendedglob
+
+
 # Pager
 if pager="$(command -v most)"; then
 	export PAGER="$pager"
@@ -27,11 +34,6 @@ fi
 if micro="$(command -v micro)"; then
 	export EDITOR="$micro"
 fi
-
-
-# ZSH autocorrection
-setopt correct
-unsetopt correct_all
 
 
 # ZSH plugin settings
