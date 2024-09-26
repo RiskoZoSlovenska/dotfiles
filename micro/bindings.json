@@ -1,16 +1,24 @@
 {
     "Alt-/": "lua:comment.comment",
-    "Alt-`": "CommandMode",
+    "Alt-Backspace": "DeleteLine",
     "Alt-d": "command:definition",
     "Alt-f": "command:format",
     "Alt-k": "command:hover",
     "Alt-r": "command:references",
-    "AltDelete": "DeleteWordRight",
-    "Ctrl-Carat": "CommandMode",
+    "Ctrl-Alt-Right": "SpawnMultiCursorSelect",
+    "Ctrl-Delete": "DeleteWordRight",
     "Ctrl-P": "CommandMode",
+    "Ctrl-Shift-Alt-Down": "DuplicateLine",
+    "Ctrl-Shift-Down": "SpawnMultiCursorDown",
+    "Ctrl-Shift-Up": "SpawnMultiCursorUp",
     "Ctrl-b": "FindPrevious",
+    "Ctrl-g": "command-edit:goto ",
+    "Ctrl-n": "FindNext",
     "Ctrl-r": "ShellMode",
+    "Ctrl-u": "RemoveMultiCursor",
     "CtrlSpace": "command:lspcompletion",
     "CtrlUnderscore": "lua:comment.comment",
-    "F5": "lua:wc.wordCount"
+    "F1": "ToggleHelp",
+    "F5": "lua:wc.wordCount",
+    "OldBackspace": "DeleteWordLeft"
 }
