@@ -1,24 +1,36 @@
 {
+    "CtrlSpace": "command:lspcompletion",
+    "CtrlUnderscore": "lua:comment.comment",
     "Alt-/": "lua:comment.comment",
+    "Ctrl-g": "command-edit:goto ",
+
     "Alt-Backspace": "DeleteLine",
+    "Ctrl-Shift-Alt-Down": "DuplicateLine",
+
     "Alt-d": "command:definition",
     "Alt-f": "command:format",
     "Alt-k": "command:hover",
     "Alt-r": "command:references",
+
     "Ctrl-Alt-Right": "SpawnMultiCursorSelect",
-    "Ctrl-Delete": "DeleteWordRight",
-    "Ctrl-P": "CommandMode",
-    "Ctrl-Shift-Alt-Down": "DuplicateLine",
     "Ctrl-Shift-Down": "SpawnMultiCursorDown",
     "Ctrl-Shift-Up": "SpawnMultiCursorUp",
-    "Ctrl-b": "FindPrevious",
-    "Ctrl-g": "command-edit:goto ",
-    "Ctrl-n": "FindNext",
-    "Ctrl-r": "ShellMode",
     "Ctrl-u": "RemoveMultiCursor",
-    "CtrlSpace": "command:lspcompletion",
-    "CtrlUnderscore": "lua:comment.comment",
+    "MouseMiddle": "MouseMultiCursor",
+
+    "OldBackspace": "DeleteWordLeft",
+    "Ctrl-Delete": "DeleteWordRight",
+
+    "Ctrl-r": "ShellMode",
+    "Ctrl-p": "CommandMode",
+    "Ctrl-Shift-p": "CommandMode",
+
+    "Ctrl-b": "FindPrevious",
+    "Ctrl-n": "FindNext",
+
+    "Ctrl-Shift-z": "Redo",
+    "Alt-z": "Redo",
+
     "F1": "ToggleHelp",
-    "F5": "lua:wc.wordCount",
-    "OldBackspace": "DeleteWordLeft"
+    "F5": "lua:wc.wordCount"
 }
