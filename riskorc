@@ -2,8 +2,6 @@
 # Risko's RC file
 # Copy to ~/.riskorc and then run from the shell's RC file
 
-shell="$(basename -- "$SHELL")"
-
 
 # Colours
 export COLORTERM=truecolor
@@ -39,7 +37,7 @@ fi
 
 
 # ZSH plugin settings
-if command -v zstyle > /dev/null; then
+if [ -n "$ZSH_NAME" ]; then
 	# Set zsh-autocomplete settings
 	zstyle ':autocomplete:*' list-lines 8
 	zstyle ':autocomplete:*' delay 0.1
@@ -51,7 +49,7 @@ stty -ixon # https://superuser.com/a/473051
 
 # https://github.com/marlonrichert/zsh-autocomplete#reset-history-key-bindings-to-zsh-default
 # shellcheck disable=all
-if [ -n "$ZSH_VERSION" ]; then
+if [ -n "$ZSH_NAME" ]; then
 	# Sane Ctrl + Backspace
 	bindkey '^H' backward-kill-word
 
@@ -149,22 +147,18 @@ EOM
 addtopath() {
 	if [ "$1" = "--help" ]; then riskohelp; fi
 
-	case $shell in
-	bash)
-		pathsfile=~/.bashrc
-		;;
-	zsh)
+	if [ -n "$ZSH_NAME" ]; then
 		pathsfile=~/.zshrc
-		;;
-	*)
+	elif [ -n "$BASH" ]; then
+		pathsfile=~/.bashrc
+	else
 		echo >&2 "cannot find file to which append PATH expansion statement"
 		return 1
-		;;
-	esac
+	fi
 
 	echo "Appending to $pathsfile and exec'ing $SHELL..."
 	echo "PATH=\"\$PATH:$1\"" >> "$pathsfile"
-	exec $SHELL
+	exec "$SHELL"
 }
 
 erc() {
