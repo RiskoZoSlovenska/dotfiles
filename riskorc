@@ -128,7 +128,7 @@ you've forgotten:
   * clip and rawclip aliases to pipe stdout to your clipboard (requires xclip)
       (rawclip just pipes, clip copies and pipes)
   * cgrep alias to grep with forced color
-  * gla alias for nice git graphs
+  * gls alias for nice git graphs
   * wgup and wgdown aliases for wireguard (defaults to wg0)
   * refresh alias to exec the current shell
   * luarocks aliases (lur, luri, etc.)
