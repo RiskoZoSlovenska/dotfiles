@@ -22,7 +22,7 @@ PATH="$PATH:$HOME/.local/sbin"
 # Pager
 if pager="$(command -v most)"; then
 	export PAGER="$pager"
-	export SYSTEMD_PAGER="$pager"
+	export SYSTEMD_PAGER="$pager +s"
 	export SYSTEMD_PAGERSECURE=true
 fi
 
