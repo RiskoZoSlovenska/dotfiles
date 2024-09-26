@@ -31,6 +31,9 @@ if micro="$(command -v micro)"; then
 	export EDITOR="$micro"
 fi
 
+# ZSH autocorrection
+setopt correct
+unsetopt correct_all
 
 # ZSH plugin settings
 if command -v zstyle > /dev/null; then
