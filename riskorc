@@ -104,6 +104,8 @@ alias luse52='luaver use 5.2.4'
 alias luse53='luaver use 5.3.6'
 alias luse54='luaver use 5.4.4'
 
+alias gls='git log --graph --decorate --oneline'
+
 
 # Functions
 riskohelp() {
