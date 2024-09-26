@@ -86,6 +86,7 @@ alias pingg='ping google.com'
 
 alias ffmpeg='ffmpeg -hide_banner'
 alias base64='base64 --wrap=0'
+alias trash='trash --verbose'
 
 alias python='python3'
 alias py='python'
