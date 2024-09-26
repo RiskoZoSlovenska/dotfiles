@@ -138,8 +138,8 @@ you've forgotten:
       Takes a string and appends it to a guessed RC file. Also exec's
       your \$SHELL so you don't have to.
   * The erc function
-      Opens RC files in code. No arg for .riskorc, 'b' for .bashrc, 'ba' for
-      .bash_aliases or 'z' for .zshrc.
+      Opens RC files in code/micro/nano. No arg for .riskorc, 'b' for .bashrc,
+	  'ba' for .bash_aliases or 'z' for .zshrc.
   * Other aliases to run various commands with friendlier default options
 EOM
 }
@@ -190,5 +190,11 @@ erc() {
 		return 1
 	fi
 
-	code "$file"
+	if command -v code > /dev/null; then
+		code "$file"
+	elif command -v micro > /dev/null; then
+		micro "$file"
+	else
+		nano "$file"
+	fi
 }
