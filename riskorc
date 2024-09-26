@@ -5,11 +5,7 @@
 shell="$(basename -- "$SHELL")"
 
 
-# Running commands
-stty -ixon # https://superuser.com/a/473051
-
-
-# Environment variables
+# Colours
 export COLORTERM=truecolor
 export MICRO_TRUECOLOR=1
 
@@ -26,14 +22,17 @@ if pager="$(command -v most)"; then
 	export SYSTEMD_PAGERSECURE=true
 fi
 
+
 # Editor
 if micro="$(command -v micro)"; then
 	export EDITOR="$micro"
 fi
 
+
 # ZSH autocorrection
 setopt correct
 unsetopt correct_all
+
 
 # ZSH plugin settings
 if command -v zstyle > /dev/null; then
@@ -41,6 +40,10 @@ if command -v zstyle > /dev/null; then
 	zstyle ':autocomplete:*' list-lines 8
 	zstyle ':autocomplete:*' delay 0.1
 fi
+
+
+# Keybind stuff
+stty -ixon # https://superuser.com/a/473051
 
 # https://github.com/marlonrichert/zsh-autocomplete#reset-history-key-bindings-to-zsh-default
 # shellcheck disable=all
@@ -122,6 +125,8 @@ you've forgotten:
   * clip and rawclip aliases to pipe stdout to your clipboard (requires xclip)
       (rawclip just pipes, clip copies and pipes)
   * cgrep alias to grep with forced color
+  * gla alias for nice git graphs
+  * wgup and wgdown aliases for wireguard (defaults to wg0)
   * refresh alias to exec the current shell
   * luarocks aliases (lur, luri, etc.)
   * luaver aliases (lcur, luse51, etc.)
