@@ -16,10 +16,12 @@ PATH="$PATH:$HOME/.local/sbin"
 
 
 # ZSH shell options
-setopt correct
-unsetopt correct_all
+if [ -n "$ZSH_NAME" ]; then
+	setopt correct
+	unsetopt correct_all
 
-setopt extendedglob
+	setopt extendedglob
+fi
 
 
 # Pager
