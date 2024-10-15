@@ -87,6 +87,7 @@ alias ping1='ping 1.1.1.1'
 alias pingg='ping google.com'
 
 alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
 alias base64='base64 --wrap=0'
 alias trash='trash --verbose'
 
