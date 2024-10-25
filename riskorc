@@ -114,8 +114,7 @@ alias luse54='luaver use 5.4.4'
 alias wgup='sudo wg-quick up wg0'
 alias wgdown='sudo wg-quick down wg0'
 
-alias gls='git log --graph --all --decorate --oneline'
-
+alias gls='git log --graph --all --pretty=format:"%C(auto)%h%d%Creset %<|(-48,trunc)%s    %C(#a0a0a0)%as (%ar)%>|(-16)%-%an%Creset"'
 
 # Functions
 riskohelp() {
