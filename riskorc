@@ -14,11 +14,12 @@ PATH="$PATH:$HOME/.local/sbin"
 
 
 # ZSH shell options
+# See https://zsh.sourceforge.io/Doc/Release/Options.html
 if [ -n "$ZSH_NAME" ]; then
-	setopt correct
-	unsetopt correct_all
-
-	setopt extendedglob
+	setopt EXTENDED_GLOB
+	setopt CORRECT  # Offer corrections
+	setopt NO_CORRECT_ALL  # Only offer corrections for the command name
+	setopt HIST_IGNORE_ALL_DUPS  # Deduplicate the history
 fi
 
 
