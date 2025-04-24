@@ -45,6 +45,10 @@ if [ -n "$ZSH_NAME" ]; then
 fi
 
 
+# 3rd-party env variables
+export OLLAMA_NOHISTORY=1
+
+
 # Keybind stuff
 stty -ixon # https://superuser.com/a/473051
 
