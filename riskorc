@@ -90,6 +90,7 @@ alias pyserver='py -m http.server'
 alias ping8='ping 8.8.8.8'
 alias ping1='ping 1.1.1.1'
 alias pingg='ping google.com'
+alias pubip='curl https://ipinfo.io/ip'
 
 alias ffmpeg='ffmpeg -hide_banner'
 alias ffprobe='ffprobe -hide_banner'
@@ -130,6 +131,7 @@ you've forgotten:
   * epath alias to echo the current \$PATH
   * pyserver alias to start http server
   * ping8, ping1 and pingg aliases to ping 8.8.8.8, 1.1.1.1 and google.com
+  * pubip alias to fetch the current public IP
   * clip and rawclip aliases to pipe stdout to your clipboard (requires xclip)
       (rawclip just pipes, clip copies and pipes)
   * cgrep alias to grep with forced color
